@@ -1,0 +1,9 @@
+name: 'Hugo Broken Link Checker Action'
+
+inputs:
+
+outputs:
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

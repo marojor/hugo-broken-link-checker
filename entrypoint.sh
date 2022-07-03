@@ -1,6 +1,7 @@
 #!/bin/bash -x
-echo "Starting Hugo server..."
+env
 
+echo "Starting Hugo server..."
 git config --global --add safe.directory $GITHUB_WORKSPACE
 
 cd $GITHUB_WORKSPACE

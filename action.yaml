@@ -1,7 +1,9 @@
 name: 'Hugo Broken Link Checker Action'
 
 inputs:
-
+  skip-file:
+    description: "Location relative to ${GITHUB_WORKFLOW} for the skip file for `linkcheck`. See https://github.com/filiph/linkcheck#skipping-urls"
+    required: false
 outputs:
 
 runs:

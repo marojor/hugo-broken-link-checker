@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 echo "Starting Hugo server..."
 
 cd $GITHUB_WORKSPACE
@@ -10,8 +10,13 @@ sleep 1
 tail -f /tmp/hugo.output | grep -qe 'Press Ctrl+C to stop'
 echo "Hugo has started"
 
-linkchecker linkchecker http://localhost:1313 --output failures
+SKIP_FILE=$1
+SKIP_FILE_OPTION=""
+test -f "$SKIP_FILE" && SKIP_FILE_OPTION="--skip-file ${GITHUB_WORKSPACE}/${SKIP_FILE}"
+
+linkcheck http://localhost:1313 $SKIP_FILE_OPTION
 LINK_CHECKER_RESULT=$?
 
 kill $HUGO_PID
+
 exit $LINK_CHECKER_RESULT

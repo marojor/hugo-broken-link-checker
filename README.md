@@ -6,8 +6,27 @@ It's inspired in https://github.com/marccampbell/hugo-linkcheck-action but a tad
 
 ## Quick Start
 
-Add the following action to your repo:
+Add the following workflow to your repo:
 
 ```
-#PUT EXAMPLE HERE
+name: Hugo broken link check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  broken-link-check:
+    runs-on: ubuntu-latest
+    name: Check for broken links
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+    - name: Check for broken Links
+      uses: marojor/hugo-broken-link-checker@v1
+      with:
+        skip-file: 'skip-rules-for-broken-links-check.txt'
 ```

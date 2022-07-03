@@ -26,7 +26,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Check for broken Links
-      uses: marojor/hugo-broken-link-checker@v1
+      uses: marojor/hugo-broken-link-checker@v1.0.5
       with:
         skip-file: 'skip-rules-for-broken-links-check.txt'
 ```

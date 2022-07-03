@@ -1,5 +1,5 @@
-name: 'Hugo Broken Link Checker Action'
-
+name: 'Hugo Internal Broken Link Checker'
+description: 'Finds internal broken links in a Hugo site'
 inputs:
   skip-file:
     description: "Location relative to ${GITHUB_WORKFLOW} for the skip file for `linkcheck`. See https://github.com/filiph/linkcheck#skipping-urls"

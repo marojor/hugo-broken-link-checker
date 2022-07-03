@@ -1,5 +1,8 @@
 name: 'Hugo Internal Broken Link Checker'
 description: 'Finds internal broken links in a Hugo site'
+branding:
+  icon: 'alert-circle'
+  color: 'purple'
 inputs:
   skip-file:
     description: "Location relative to ${GITHUB_WORKFLOW} for the skip file for `linkcheck`. See https://github.com/filiph/linkcheck#skipping-urls"

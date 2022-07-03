@@ -2,7 +2,7 @@
 echo "Starting Hugo server..."
 
 cd $GITHUB_WORKSPACE
-hugo server --baseUrl http://localhost:1313 > /tmp/hugo.output &
+hugo server --baseUrl http://localhost:1313 | tee /tmp/hugo.output &
 HUGO_PID=$!
 sleep 1
 

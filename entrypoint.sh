@@ -1,6 +1,8 @@
 #!/bin/bash -x
 echo "Starting Hugo server..."
 
+git config --global --add safe.directory $GITHUB_WORKSPACE
+
 cd $GITHUB_WORKSPACE
 hugo server --baseUrl http://localhost:1313 | tee /tmp/hugo.output &
 HUGO_PID=$!

@@ -7,7 +7,7 @@ HUGO_PID=$!
 sleep 1
 
 # Wait for Hugo to finish the startup process
-tail -f /tmp/hugo.output | grep -qe 'Press Ctrl+C to stop'
+tail -f /tmp/hugo.output | timeout 120 grep -qe 'Press Ctrl+C to stop'
 echo "Hugo has started"
 
 SKIP_FILE=$1

@@ -7,8 +7,13 @@ inputs:
   skip-file:
     description: "Location relative to ${GITHUB_WORKFLOW} for the skip file for `linkcheck`. See https://github.com/filiph/linkcheck#skipping-urls"
     required: false
+  check-anchors:
+    description: "Whether anchors should be also checked. Default: true"
+    required: false
+    default: "true"
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.skip-file }}
+    - ${{ inputs.check-anchors }}
